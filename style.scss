@@ -70,7 +70,7 @@ span {
 			left: 0;
 			height: 100%;
 			width: 100%;
-			background-color: rgba(0, 0, 0, 0.96);
+			background-color: rgba(0, 0, 0, 0.8);
 		}
 	}
 	#content {
@@ -94,9 +94,11 @@ span {
 			flex-direction: column;
 			.structure-top {
 				display: flex;
+				position: relative;
 				div {
 					display: flex;
 					width: 25%;
+					// min-width: 22%;
 					.topline {
 						width: 0;
 						height: 1px;
@@ -104,6 +106,7 @@ span {
 					}
 				}
 				a {
+					// min-width: 100px;
 					display: block;
 					margin-top: -11px;
 					padding: 0 7px;
@@ -189,27 +192,40 @@ span {
 			display: flex;
 			flex-direction: column;
 			a {
+				font-size: 1.1em;
 				position: relative;
 				margin-bottom: 15px;
 				padding-left: 20px;
 				transition: letter-spacing .3s;
 				opacity: 0;
+				&:before {
+					content: "";
+					position: absolute;
+					left: -4px;
+					top: 4px;
+					height: 10px;
+					width: 10px;
+					border-radius: 50%;
+					background: #ccff00;
+				}
+				&:hover {
+					letter-spacing: 3px;
+				}
 			}
-			a:before {
-				content: "";
-				position: absolute;
-				left: -4px;
-				top: 7px;
-				height: 10px;
-				width: 10px;
-				border-radius: 50%;
-				background: #ccff00;
-			}
-			a:hover {
-				letter-spacing: 3px;
-			}
-			:last-child {
+			&:last-child {
 				margin-bottom: 0;	
+			}
+		}
+		.circle {
+			overflow: visible;
+			position: absolute;
+			top: calc(50% - 100px);
+			left: calc(50% - 100px);
+			transform: rotate(-90deg);
+			circle {
+				stroke-dasharray: 600;
+				animation: anim 1s;
+				animation-delay: 2.2s;
 			}
 		}
 	}
@@ -223,3 +239,15 @@ span {
 	75% { background-position: right top; }
 	100% { background-position: right bottom; }
 }
+@keyframes anim {
+	// 50% { stroke-dashoffset: 300; }
+	100% { stroke-dashoffset: 0; }
+}
+
+
+
+
+
+
+
+

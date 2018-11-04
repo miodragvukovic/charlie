@@ -68,7 +68,7 @@ span {
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.96); }
+      background-color: rgba(0, 0, 0, 0.8); }
   #main #content {
     position: relative;
     z-index: 2;
@@ -88,7 +88,8 @@ span {
     #main #content .structure-vertical {
       flex-direction: column; }
       #main #content .structure-vertical .structure-top {
-        display: flex; }
+        display: flex;
+        position: relative; }
         #main #content .structure-vertical .structure-top div {
           display: flex;
           width: 25%; }
@@ -163,24 +164,35 @@ span {
       display: flex;
       flex-direction: column; }
       #main #content .navbar a {
+        font-size: 1.1em;
         position: relative;
         margin-bottom: 15px;
         padding-left: 20px;
         transition: letter-spacing .3s;
         opacity: 0; }
-      #main #content .navbar a:before {
-        content: "";
-        position: absolute;
-        left: -4px;
-        top: 7px;
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        background: #ccff00; }
-      #main #content .navbar a:hover {
-        letter-spacing: 3px; }
-      #main #content .navbar :last-child {
+        #main #content .navbar a:before {
+          content: "";
+          position: absolute;
+          left: -4px;
+          top: 4px;
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          background: #ccff00; }
+        #main #content .navbar a:hover {
+          letter-spacing: 3px; }
+      #main #content .navbar:last-child {
         margin-bottom: 0; }
+    #main #content .circle {
+      overflow: visible;
+      position: absolute;
+      top: calc(50% - 100px);
+      left: calc(50% - 100px);
+      transform: rotate(-90deg); }
+      #main #content .circle circle {
+        stroke-dasharray: 600;
+        animation: anim 1s;
+        animation-delay: 2.2s; }
 
 @keyframes bgAnim {
   0% {
@@ -193,5 +205,8 @@ span {
     background-position: right top; }
   100% {
     background-position: right bottom; } }
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 0; } }
 
 /*# sourceMappingURL=style.css.map */
