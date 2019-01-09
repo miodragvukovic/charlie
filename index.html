@@ -4,82 +4,195 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Fahkwang" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Anton%7COswald:300,500" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+	<link rel="stylesheet" type="text/css" href="swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Masterwork</title>
   </head>
   <body>
-  	<div class="site">
-		<span class="menu">
-			<span class="span-upper"></span>
-			<span class="span-lower"></span>
-		</span>
-		<main id="main">
-			<section class="background">
-				<div class="bg-filter"></div>
-			</section>
-			<section id="content">
-				<div class="structure-vertical">
-					<div class="structure-top">
-						<div>
-							<span class="topline topline-1"></span>
+  	<section id="overlay">
+  		<h4>Loading...</h4>
+  		<svg class="circle" height="200" width="200">
+  		  <circle cx="100" cy="100" r="95" stroke="#ccff00" stroke-width="5px" stroke-dashoffset="600" fill="none" />
+  		</svg>
+  	</section>
+	<main>
+		<nav id="navbar" class="inactive">
+			<div class="container">
+				<span class="logo">
+					<a class="home-logo active" href="#home"><span class="red">U</span>niversum</a>
+				</span>
+				<ul class="nav">
+					<li><a class="link s1" href="#s1">Teretane</a></li>
+					<li><a class="link s2" href="#s2">Galerija</a></li>
+					<li><a class="link s3" href="#s3">O meni</a></li>
+					<li><a class="link s4" href="#s4">Zasto?</a></li>
+					<li><a class="link s5" href="#s5">Kontakt</a></li>
+				</ul>
+			</div>
+			<span id="progress"></span>
+		</nav>
+		<section class="home">
+			<span  data-value="home" id="home"></span>
+			<div class="container">
+				<h1 class="h1"><span class="red ease-out">A</span>leksandar <span class="red ease-out">K</span>ostic</h1>
+				<p class="h3">Fitness instruktor i Personalni trener</p>
+			</div>
+		</section>
+		<section class="gym section">
+			<span data-value="s1" id="s1"></span>
+			<div class="container">
+				<figure class="gym-logo">
+					<span data-value="map-1" class="span-1 map-trigger ease-out"><span class="red ease-out">U</span>niversum <span class="red ease-out">F</span>itness <span class="red ease-out">C</span>entar</span>
+					<span data-value="map-2" class="span-2 map-trigger ease-out"><span class="red ease-out">U</span>niversum <span class="red ease-out">C</span>lassic</span>
+				</figure>
+				<figure class="left-text">
+					<h3>Lorem ipsum dolor sit amet</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</figure>
+			</div>
+		</section>
+		<section class="gallery section">
+			<span data-value="s2" id="s2"></span>
+			<div class="container gallery-trigger">
+				<span class="scroll-down"></span>
+				<div class="left-side">
+					<figure class="left">
+						<div class="content">
+							<h2>Pogledajte nasu galeriju</h2>
 						</div>
-						<a class="link-1" href="#">Dogadjaji</a>
-						<div>
-							<span class="topline topline-2"></span>
-						</div>
-						<div>
-							<span class="topline topline-3"></span>
-						</div>
-						<a class="link-2" href="#">O nama</a>
-						<div>
-							<span class="topline topline-4"></span>
-						</div>
-					</div>
-					<div class="structure-bottom">
-						<div>
-							<span class="bottomline bottomline-1"></span>
-						</div>
-						<span>
-							<h1 id="title">PK Charlie</h1>
-						</span>
-						<div>
-							<span class="bottomline bottomline-2"></span>
-						</div>
-					</div>
+					</figure>
 				</div>
-				<div class="structure-horisontal">
-					<div class="structure-left">
-						<div>
-							<span class="left"></span>
+				<div class="right-side">
+					<figure class="right">
+						<div class="content">
+							<h2>Pogledajte nasu galeriju</h2>
 						</div>
-					</div>
-					<div class="structure-right">
-						<div >
-							<span class="right right-upper"></span>
-						</div>
-						<span class="link-wrap">
-							<a href="#">Kalkulator</a>
-						</span>
-						<div>
-							<span class="right right-lower"></span>
-						</div>
-					</div>
+					</figure>
 				</div>
-				<nav class="navbar">
-					<a class="nav-1" href="#">Galerija</a>
-					<a class="nav-2" href="#">Organizacije</a>
-					<a class="nav-3" href="#">Kontakt</a>
-				</nav>
-				<svg class="circle" height="200" width="200">
-				  <circle cx="100" cy="100" r="95" stroke="#ccff00" stroke-width="2px" stroke-dashoffset="600" fill="none" />
-				</svg>
-			</section>
-		</main>
+			</div>
+			<div id="image-list"></div>
+		</section>
+		<section class="info section">
+			<span data-value="s3" id="s3"></span>
+			<div class="container">
+				<figure class="info-text ease-out">
+					<h2>Ukratko o meni</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</figure>
+				<figure class="info-image">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="images/img1.jpg" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img src="images/img2.jpg" alt="">
+							</div>
+							<div class="swiper-slide">
+								<img src="images/img3.jpg" alt="">
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</figure>
+			</div>
+		</section>
+		<section class="about section">
+			<span data-value="s4" id="s4"></span>
+			<div class="container">
+				<h3><span class="red ease-out">N</span>ajcesce <span class="red ease-out">P</span>ostavljena <span class="red ease-out">P</span>itanja</h3>
+				<figure class="q-a">
+					<ul class="ul-1">
+						<li class="question"><span>Lorem ipsum dolor sit amet, consectetur adipiscing?</span>
+						</li>
+						<li class="answer">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						</li>
+					</ul>
+					<ul  class="ul-2">
+						<li class="question active"><span>Lorem ipsum dolor sit amet, consectetur adipiscing?</span>
+						</li>
+						<li class="answer active">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						</li>
+					</ul>
+					<ul class="ul-3">
+						<li class="question"><span>Lorem ipsum dolor sit amet, consectetur adipiscing?</span>
+						</li>
+						<li class="answer">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						</li>
+					</ul>
+					<ul  class="ul-4">
+						<li class="question"><span>Lorem ipsum dolor sit amet, consectetur adipiscing?</span>
+						</li>
+						<li class="answer">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						</li>
+					</ul>
+					<ul  class="ul-5">
+						<li class="question"><span>Lorem ipsum dolor sit amet, consectetur adipiscing?</span>
+						</li>
+						<li class="answer">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						</li>
+					</ul>
+					<ul class="ul-6">
+						<li class="question"><span>Lorem ipsum dolor sit amet, consectetur adipiscing?</span>
+						</li>
+						<li class="answer">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						</li>
+					</ul>
+				</figure>
+				
+			</div>
+		</section>
+		<section class="contact section">
+			<span data-value="s5" id="s5"></span>
+			<div class="container">
+				
+			</div>
+		</section>
+		<!-- <section id="s5" class="intro ease-out section">
+			<div class="container">
+				<figure class="box ease-out">
+					<a href="http://m.me/<FACEBOOK_PAGE_USERNAME>" target="_blank"><i class="fab fa-facebook-messenger ease-out"></i></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</figure>
+				<figure class="box ease-out">
+					<a href="whatsapp://call?number=##########" target="_blank"><i class="fab fa-whatsapp ease-out"></i></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</figure>
+				<figure class="box ease-out">
+					<a href="viber://add?number=12345678" target="_blank"><i class="fab fa-viber ease-out"></i></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</figure>
+			</div>
+		</section> -->
+	</main>
+	<div class="overlay-map-1 map-1 overlay">
+		<div class="map-wrp">
+			<span class="close-map"></span>
+			<iframe title="location" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.342716235896!2d21.90576788878285!3d43.32801705189808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755b0cf22b3de71%3A0xb23309facc4363be!2sPantelejska+55%2C+Ni%C5%A1!5e0!3m2!1sen!2srs!4v1545530594077" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="CSSPlugin.min.js"></script>
-	<script type="text/javascript" src="TimelineLite.min.js"></script>
-	<script type="text/javascript" src="TweenLite.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+	<div class="overlay-map-1 map-2 overlay">
+		<div class="map-wrp">
+			<span class="close-map"></span>
+			<iframe title="location" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.899220348883!2d21.920393415278653!3d43.31636907913438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755b09397ec6215%3A0x5d5a5fe11362f946!2sVranjanska+24%2C+Ni%C5%A1+18000!5e0!3m2!1sen!2srs!4v1545529607086" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+	</div>
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+	<script src="swiper.min.js"></script>
+	<script src="script.js"></script>
   </body>
 </html>
