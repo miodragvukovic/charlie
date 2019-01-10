@@ -123,27 +123,29 @@ window.addEventListener('scroll', function(){
 			} else {
 				document.querySelector('.gym').classList.remove('font-color')
 			}
+			for ( var v = 0; v < document.getElementsByClassName('link').length; v++ ) {
+				document.getElementsByClassName('link')[v].classList.remove('active')
+				if ( secVal == undefined ) {
+					document.querySelector('.home-logo').classList.add('active')
+				} else {
+					document.querySelector('.home-logo').classList.remove('active')
+					document.querySelector("."+secVal+"").classList.add('active')
+				}
+			}
+			document.getElementById('progress').style.width = ""+difference * siteTop+"px"
 		} else {
 			sec.classList.add('active')
 			navbar.classList.add('scrolled')
 		}
 	}
-	document.getElementById('progress').style.width = ""+difference * siteTop+"px"
-	for ( var v = 0; v < document.getElementsByClassName('link').length; v++ ) {
-		document.getElementsByClassName('link')[v].classList.remove('active')
-		if ( secVal == undefined ) {
-			document.querySelector('.home-logo').classList.add('active')
-		} else {
-			document.querySelector('.home-logo').classList.remove('active')
-			document.querySelector("."+secVal+"").classList.add('active')
-		}
-	}
 })
+
+
+// DROPDOWN TRIGGER
 document.querySelector('.dropdown-trigger').addEventListener('click', function(){
 	if ( this.classList.contains('active') && document.querySelector('.nav').classList.contains('active') ) {
 		this.classList.remove('active')
 		document.querySelector('.nav').classList.remove('active')
-
 	} else {
 		this.classList.add('active')
 		document.querySelector('.nav').classList.add('active')
