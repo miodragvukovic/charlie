@@ -60,7 +60,7 @@ section {
 	position: relative;
 	> span {
 		position: absolute;
-		top: -76px;
+		top: -77px;
 	}
 }
 .ease-out {
@@ -133,7 +133,6 @@ nav {
 				font-weight: bold;
 			}
 			a {
-				position: absolute;
 				transition: .3s ease-out;
 				text-transform: uppercase;
 				&:before {
@@ -183,6 +182,100 @@ nav {
 				}
 			}
 		}
+		.dropdown-trigger {
+			display: none;
+		}
+		@media (max-width: 768px) {
+			.nav {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				right: -100px;
+				// right: 0;
+				top: 100%;
+				transition: .2s ease-out;
+				li {
+					position: relative;
+					text-align: right;
+					padding: 10px 100px 10px 30px;
+					margin-right: 0;
+					right: -300px;
+					background: $black;
+					&:before {
+						position: absolute;
+						content: '';
+						height: 100%;
+						width: 30px;
+						transform: skew(-19.5deg);
+						background: $black;
+						left: -10px;
+						top: 0;
+						border-bottom: 2px solid $green;
+						border-left: 2px solid $green;
+					}
+					&:last-child {
+						border-bottom: 2px solid $green;
+					}
+				}
+				&.active {
+				}
+			}
+			.dropdown-trigger {
+				position: relative;
+				display: inline-block;
+				height: 30px;
+				width: 50px;
+				top: 3px;
+				cursor: pointer;
+				&:before {
+					position: absolute;
+					content: '';
+					height: 4px;
+					width: 40px;
+					border-radius: 25px;
+					top: 13px;
+					left: 5px;
+					background: $white;
+					transition: .5s ease-out;
+				}
+				span {
+					position: absolute;
+					width: 40px;
+					height: 4px;
+					border-radius: 25px;
+					background: $white;
+					left: 5px;
+					transition: .5s ease-out;
+					&:nth-child(1) {
+						top: 0;
+					}
+					&:nth-child(2) {
+						top: 13px;
+					}
+					&:nth-child(3) {
+						top: 26px;
+					}
+				}
+				&.active {
+					&:before {
+						transform: rotate(-45deg);
+						background: $green;
+					}
+					span {
+						background: $green;
+						&:nth-child(1) {
+							opacity: 0;
+						}
+						&:nth-child(2) {
+							transform: rotate(45deg);
+						}
+						&:nth-child(3) {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
 	}
 	&.scrolled {
 		background: rgb(0, 0, 0);
@@ -192,7 +285,6 @@ nav {
 				a {
 					font-size: 3.5rem;
 					top: 0;
-					// color: $green;
 				}
 			}
 			.nav {
@@ -202,6 +294,12 @@ nav {
 					}
 				}
 			}
+			// .dropdown-trigger {
+			// 	&:before,
+			// 	span {
+			// 		background: $green;
+			// 	}
+			// }
 		}
 	}
 	#progress {
@@ -278,10 +376,25 @@ nav {
 			letter-spacing: 1px;
 		}
 	}
+	@media (max-width: 768px) {
+		.container {
+			h1 {
+				&.active {
+					right: 30px;
+				}
+			}
+			p {
+				&.active {
+					right: 40px;
+				}
+			}
+		}
+	}
 }
 .gym {
 	background: $black;
 	z-index: 1;
+	padding: 50px 0;
 	&:after {
 		position: absolute;
 		content: '';
@@ -399,6 +512,22 @@ nav {
 			.left-text {
 				h3 {
 					color: $green;
+				}
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		padding-top: 30px;
+		.container {
+			flex-direction: column;
+			.gym-logo {
+				> span {
+					margin-bottom: 20px;
+				}
+			}
+			.left-text {
+				h3 {
+					margin: 0;
 				}
 			}
 		}
@@ -558,6 +687,33 @@ nav {
 			.info-text {
 				transform: scale(1);
 				opacity: 1;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		padding-bottom: 50px;
+		.container {
+			flex-direction: column;
+			> figure {
+				width: 100%;
+				&.info-text {
+					padding: 0;
+				}
+				&.info-image {
+					margin: 0;
+					padding: 0;
+					justify-content: center;
+					flex-direction: row;
+					width: 100%;
+					.swiper-container {
+						max-width: 300px;
+						.swiper-wrapper {
+							.swiper-slide {
+								height: 400px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -732,6 +888,9 @@ nav {
 				}
 			}
 		}
+	}
+	@media (max-width: 768px) {
+		min-height: 700px;
 	}
 }
 .contact {
@@ -913,6 +1072,19 @@ main.active .home {
 @for $i from 1 to 7 {
 	.about.active .ul-#{$i} {
 		transition: 0.2s * $i ease-out !important;
+	}
+}
+@media (max-width: 768px) {
+	@for $i from 1 to 6 {
+		.nav.active .link#{$i} {
+			right: 20px * $i;
+			transition: 0.2s * $i !important;
+		}
+	}
+	@for $i from 6 to 1 {
+		li.link#{$i} {
+			transition: 0.2s * $i !important;
+		}
 	}
 }
 @keyframes forw {

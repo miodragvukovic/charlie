@@ -18,6 +18,9 @@ var mySwiper = new Swiper ('.swiper-container', {
 // ONLOAD FUNKCIJE
 window.onload = function () {
 	window.scrollTo(0,0)
+	if ( window.innerWidth <= 768 ) {
+		navbar.classList.add('scrolled')
+	}
 }
 setTimeout(function(){
 	siteWidth = window.innerWidth
@@ -85,32 +88,37 @@ for (var r = 0; r < document.getElementsByClassName('map-trigger').length; r++) 
 
 // SVI ON SCROLL HANDLERI
 window.addEventListener('scroll', function(){
-	var siteTop = window.pageYOffset
-	if ( siteTop > 30 ) {
-		site.classList.add('active')
-		navbar.classList.add('scrolled')
-	} else {
-		navbar.classList.remove('scrolled')
-		site.classList.remove('active')
-	}
 	for ( var i = 0; i < document.getElementsByClassName('section').length; i ++ ) {
 		var sec = document.getElementsByClassName('section')[i]
 		var pageBottom = window.innerHeight + window.pageYOffset
 		var elemHeight = sec.clientHeight / 1.3
-		if ( window.innerWidth < 1366 ) {
-			elemHeight = sec.clientHeight / 2
-		}
-		if ( pageBottom >= sec.offsetTop + elemHeight ) {
+		if ( window.innerWidth > 768 ) {
+			var siteTop = window.pageYOffset
+			if ( siteTop > 30 ) {
+				site.classList.add('active')
+				navbar.classList.add('scrolled')
+			} else {
+				navbar.classList.remove('scrolled')
+				site.classList.remove('active')
+			}
+			if ( window.innerWidth < 1366 ) {
+				elemHeight = sec.clientHeight / 2
+			}
+			if ( pageBottom >= sec.offsetTop + elemHeight ) {
+				sec.classList.add('active')
+				var secVal = sec.children[0].getAttribute('data-value')
+				
+			} else {
+				sec.classList.remove('active')
+			}
+			if ( document.querySelector('.gallery').classList.contains('active') ) {
+				document.querySelector('.gym').classList.add('font-color')
+			} else {
+				document.querySelector('.gym').classList.remove('font-color')
+			}
+		} else {
 			sec.classList.add('active')
-			var secVal = sec.children[0].getAttribute('data-value')
-			
-		} else {
-			sec.classList.remove('active')
-		}
-		if ( document.querySelector('.gallery').classList.contains('active') ) {
-			document.querySelector('.gym').classList.add('font-color')
-		} else {
-			document.querySelector('.gym').classList.remove('font-color')
+			navbar.classList.add('scrolled')
 		}
 	}
 	document.getElementById('progress').style.width = ""+difference * siteTop+"px"
@@ -122,5 +130,15 @@ window.addEventListener('scroll', function(){
 			document.querySelector('.home-logo').classList.remove('active')
 			document.querySelector("."+secVal+"").classList.add('active')
 		}
+	}
+})
+document.querySelector('.dropdown-trigger').addEventListener('click', function(){
+	if ( this.classList.contains('active') && document.querySelector('.nav').classList.contains('active') ) {
+		this.classList.remove('active')
+		document.querySelector('.nav').classList.remove('active')
+
+	} else {
+		this.classList.add('active')
+		document.querySelector('.nav').classList.add('active')
 	}
 })
