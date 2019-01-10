@@ -388,6 +388,9 @@ nav {
         transition: .3s ease-in; }
       .gym .container .gym-logo > span:hover:before {
         opacity: 1; }
+      @media (max-width: 480px) {
+        .gym .container .gym-logo > span:hover:before {
+          opacity: 0; } }
       .gym .container .gym-logo > span.span-1 {
         left: 100%; }
       .gym .container .gym-logo > span.span-2 {
@@ -697,10 +700,6 @@ nav {
         .about .container .q-a ul:nth-child(odd) li:first-child {
           transform: skew(30deg);
           margin-left: 20px; }
-          @media (max-width: 480px) {
-            .about .container .q-a ul:nth-child(odd) li:first-child {
-              margin-left: 0;
-              font-size: 1.6rem; } }
           .about .container .q-a ul:nth-child(odd) li:first-child:before {
             position: absolute;
             content: '';
@@ -716,14 +715,17 @@ nav {
           .about .container .q-a ul:nth-child(odd) li:first-child:hover {
             transform: skew(30deg) translateX(3px) translateY(-3px) scale(1.01);
             box-shadow: -5px 4px 16px -5px #000; }
+          @media (max-width: 480px) {
+            .about .container .q-a ul:nth-child(odd) li:first-child {
+              margin-left: 0;
+              font-size: 1.6rem; }
+              .about .container .q-a ul:nth-child(odd) li:first-child:hover {
+                transform: skew(30deg);
+                box-shadow: none; } }
         .about .container .q-a ul:nth-child(even) li:first-child {
           float: right;
           margin-right: 20px;
           transform: skew(-30deg); }
-          @media (max-width: 480px) {
-            .about .container .q-a ul:nth-child(even) li:first-child {
-              margin-right: 0;
-              font-size: 1.6rem; } }
           .about .container .q-a ul:nth-child(even) li:first-child:before {
             position: absolute;
             content: '';
@@ -739,6 +741,13 @@ nav {
           .about .container .q-a ul:nth-child(even) li:first-child:hover {
             transform: skew(-30deg) translateX(-3px) translateY(-3px) scale(1.01);
             box-shadow: -5px 4px 16px -5px #000; }
+          @media (max-width: 480px) {
+            .about .container .q-a ul:nth-child(even) li:first-child {
+              margin-right: 0;
+              font-size: 1.6rem; }
+              .about .container .q-a ul:nth-child(even) li:first-child:hover {
+                transform: skew(-30deg);
+                box-shadow: none; } }
         .about .container .q-a ul:nth-child(even) li:last-child p {
           text-align: left; }
       @media (max-width: 480px) {

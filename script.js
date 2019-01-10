@@ -15,6 +15,8 @@ var mySwiper = new Swiper ('.swiper-container', {
     },
 })
 
+
+// DROPDOWN TRIGGER
 if ( window.innerWidth <= 768 ) {
 	navbar.classList.add('scrolled')
 	for ( var k = 0; k < document.getElementsByClassName('link').length; k++ ) {
@@ -23,6 +25,15 @@ if ( window.innerWidth <= 768 ) {
 			document.querySelector('.nav').classList.remove('active')
 		})
 	}
+	document.querySelector('.dropdown-trigger').addEventListener('click', function(){
+		if ( this.classList.contains('active') && document.querySelector('.nav').classList.contains('active') ) {
+			this.classList.remove('active')
+			document.querySelector('.nav').classList.remove('active')
+		} else {
+			this.classList.add('active')
+			document.querySelector('.nav').classList.add('active')
+		}
+	})
 }
 
 // ONLOAD FUNKCIJE
@@ -135,19 +146,6 @@ window.addEventListener('scroll', function(){
 			document.getElementById('progress').style.width = ""+difference * siteTop+"px"
 		} else {
 			sec.classList.add('active')
-			navbar.classList.add('scrolled')
 		}
-	}
-})
-
-
-// DROPDOWN TRIGGER
-document.querySelector('.dropdown-trigger').addEventListener('click', function(){
-	if ( this.classList.contains('active') && document.querySelector('.nav').classList.contains('active') ) {
-		this.classList.remove('active')
-		document.querySelector('.nav').classList.remove('active')
-	} else {
-		this.classList.add('active')
-		document.querySelector('.nav').classList.add('active')
 	}
 })
