@@ -453,6 +453,9 @@ nav {
         .gym .container .left-text h3 {
           margin: 0;
           color: #ccff00; } }
+  @media (max-width: 480px) {
+    .gym .container .left-text h3 {
+      text-align: center; } }
 
 .gallery {
   background: #fff;
@@ -694,6 +697,10 @@ nav {
         .about .container .q-a ul:nth-child(odd) li:first-child {
           transform: skew(30deg);
           margin-left: 20px; }
+          @media (max-width: 480px) {
+            .about .container .q-a ul:nth-child(odd) li:first-child {
+              margin-left: 0;
+              font-size: 1.6rem; } }
           .about .container .q-a ul:nth-child(odd) li:first-child:before {
             position: absolute;
             content: '';
@@ -713,6 +720,10 @@ nav {
           float: right;
           margin-right: 20px;
           transform: skew(-30deg); }
+          @media (max-width: 480px) {
+            .about .container .q-a ul:nth-child(even) li:first-child {
+              margin-right: 0;
+              font-size: 1.6rem; } }
           .about .container .q-a ul:nth-child(even) li:first-child:before {
             position: absolute;
             content: '';
@@ -849,8 +860,13 @@ nav {
         left: 23px;
         background: #fff;
         transform: rotate(-45deg); }
+    .overlay .map-wrp h2 {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px; }
     .overlay .map-wrp .map {
-      position: absolute;
+      position: relative;
       height: 100%;
       width: 100%;
       top: 0;

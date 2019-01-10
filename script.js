@@ -15,12 +15,19 @@ var mySwiper = new Swiper ('.swiper-container', {
     },
 })
 
+if ( window.innerWidth <= 768 ) {
+	navbar.classList.add('scrolled')
+	for ( var k = 0; k < document.getElementsByClassName('link').length; k++ ) {
+		document.getElementsByClassName('link')[k].addEventListener('click', function(){
+			document.querySelector('.dropdown-trigger').classList.remove('active')
+			document.querySelector('.nav').classList.remove('active')
+		})
+	}
+}
+
 // ONLOAD FUNKCIJE
 window.onload = function () {
 	window.scrollTo(0,0)
-	if ( window.innerWidth <= 768 ) {
-		navbar.classList.add('scrolled')
-	}
 }
 setTimeout(function(){
 	siteWidth = window.innerWidth
