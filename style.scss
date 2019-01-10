@@ -210,9 +210,9 @@ nav {
 				display: flex;
 				flex-direction: column;
 				right: -100px;
-				// right: 0;
 				top: 100%;
 				transition: .2s ease-out;
+				opacity: 0;
 				li {
 					position: relative;
 					text-align: right;
@@ -237,6 +237,7 @@ nav {
 					}
 				}
 				&.active {
+					opacity: 1;
 				}
 			}
 			.dropdown-trigger {

@@ -184,7 +184,8 @@ nav {
         flex-direction: column;
         right: -100px;
         top: 100%;
-        transition: .2s ease-out; }
+        transition: .2s ease-out;
+        opacity: 0; }
         nav .container .nav li {
           position: relative;
           text-align: right;
@@ -205,6 +206,8 @@ nav {
             border-left: 2px solid #ccff00; }
           nav .container .nav li:last-child {
             border-bottom: 2px solid #ccff00; }
+        nav .container .nav.active {
+          opacity: 1; }
       nav .container .dropdown-trigger {
         position: relative;
         display: inline-block;
