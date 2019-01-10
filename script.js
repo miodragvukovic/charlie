@@ -105,12 +105,12 @@ for (var r = 0; r < document.getElementsByClassName('map-trigger').length; r++) 
 
 
 // SVI ON SCROLL HANDLERI
-window.addEventListener('scroll', function(){
-	for ( var i = 0; i < document.getElementsByClassName('section').length; i ++ ) {
-		var sec = document.getElementsByClassName('section')[i]
-		var pageBottom = window.innerHeight + window.pageYOffset
-		var elemHeight = sec.clientHeight / 1.3
-		if ( window.innerWidth > 768 ) {
+if ( window.innerWidth > 768 ) {
+	window.addEventListener('scroll', function(){
+		for ( var i = 0; i < document.getElementsByClassName('section').length; i ++ ) {
+			var sec = document.getElementsByClassName('section')[i]
+			var pageBottom = window.innerHeight + window.pageYOffset
+			var elemHeight = sec.clientHeight / 1.3
 			var siteTop = window.pageYOffset
 			if ( siteTop > 30 ) {
 				site.classList.add('active')
@@ -144,8 +144,10 @@ window.addEventListener('scroll', function(){
 				}
 			}
 			document.getElementById('progress').style.width = ""+difference * siteTop+"px"
-		} else {
-			sec.classList.add('active')
 		}
+	})
+} else {
+	for ( var i = 0; i < document.getElementsByClassName('section').length; i ++ ) {
+		document.getElementsByClassName('section')[i].classList.add('active')
 	}
-})
+}
